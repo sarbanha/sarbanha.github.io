@@ -11,17 +11,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # environment: staging
     steps:
       - name: ssh and deploy app
         shell: bash
         env:
-          ssh_key: "${{ secrets.STAGING_SERVER_SSH_KEY }}"
-        run: |
-          # env
-          echo "$ssh_key" > ~/STAGING_SERVER_SSH_KEY
-          sudo chmod 600 ~/STAGING_SERVER_SSH_KEY
-          cat ~/STAGING_SERVER_SSH_KEY
-          ls -lah ~/
-          # ssh -vi ~/STAGING_SERVER_SSH_KEY -oStrictHostKeyChecking=no github@34.122.247.158 "touch HI_FROM_GIT"
-
+          TEST_SECRET: "${{ secrets.TEST_SECRET }}"
+        run: echo "$TEST_SECRET"
