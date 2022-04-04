@@ -19,6 +19,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.STAGING_SERVER_SSH_KEY }}
         run: |
+          env
           echo "$SSH_PRIVATE_KEY" > github_id_rsa
           sudo chmod 600 github_id_rsa
           ssh -vi github_id_rsa -oStrictHostKeyChecking=no github@34.122.247.158 "touch ${GITHUB_REF_NAME}"
