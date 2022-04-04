@@ -14,6 +14,6 @@ jobs:
     steps:
       - name: ssh and deploy app
       - run: env
-    envvironment: 
+    environment: 
       name: staging
       url: https://stage.potentialisation.com
