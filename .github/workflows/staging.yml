@@ -19,7 +19,7 @@ jobs:
           ssh_key: 'KEY= ${{ secrets.STAGING_SERVER_SSH_KEY }}'
         run: |
           env
-          # echo "SSH Key: $ssh_key"
+          # echo "SSH Key: ${{ secrets.STAGING_SERVER_SSH_KEY }}"
           echo $ssh_key > ~/STAGING_SERVER_SSH_KEY
           sudo chmod 600 ~/STAGING_SERVER_SSH_KEY
           ls -lah ~/
