@@ -19,8 +19,8 @@ jobs:
           cat ~/STAGING_SERVER_SSH_KEY
           ls -la ~/
         shell: bash
-    env:
-      ssh_key: ${{ secrets.STAGING_SERVER_SSH_KEY }}
+        env:
+          ssh_key: ${{ secrets.STAGING_SERVER_SSH_KEY }}
     environment: 
       name: staging
       url: https://stage.potentialisation.com
