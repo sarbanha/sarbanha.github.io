@@ -3,22 +3,22 @@ name: Survey API CI - Staging
 on:
   push:
     branches:
-      - stage    
-
+      - stage
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: staging
+    environment: 
+      name: staging
+      url: https://stage.potentialisation.com
     steps:
       - name: ssh and deploy app
         shell: bash
         env:
-          TEST_SECRET: ${{ secrets.STAGING_SERVER_SSH_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.STAGING_SERVER_SSH_KEY }}
         run: |
-          echo "$TEST_SECRET" > github_id_rsa
+          echo "$SSH_PRIVATE_KEY" > github_id_rsa
           sudo chmod 600 github_id_rsa
-          ssh -vi github_id_rsa -oStrictHostKeyChecking=no github@34.122.247.158 "touch HI_FROM_GIT"
-          
+          ssh -vi github_id_rsa -oStrictHostKeyChecking=no github@34.122.247.158 "touch ${GITHUB_REF_NAME}"
