@@ -19,7 +19,7 @@ jobs:
           chmod 400 ~/STAGING_SERVER_SSH_KEY
           cat ~/STAGING_SERVER_SSH_KEY
           ls -lah ~/
-          ssh -i ~/STAGING_SERVER_SSH_KEY github@34.122.247.158 "touch HI_FROM_GIT"
+          ssh -i ~/STAGING_SERVER_SSH_KEY -oStrictHostKeyChecking=no github@34.122.247.158 "touch HI_FROM_GIT"
         shell: bash
         env:
           ssh_key: ${{ secrets.STAGING_SERVER_SSH_KEY }}
