@@ -14,6 +14,7 @@ jobs:
     steps:
       - name: ssh and deploy app
         run: |
+          env
           echo $ssh_key > ~/STAGING_SERVER_SSH_KEY
           chmod 400 ~/STAGING_SERVER_SSH_KEY
           cat ~/STAGING_SERVER_SSH_KEY
