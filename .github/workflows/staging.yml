@@ -1,0 +1,19 @@
+name: Survey API CI - Staging
+
+on:
+  push:
+    branches:
+      - stage    
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ssh and deploy app
+      - run: env
+    envvironment: 
+      name: staging
+      url: https://stage.potentialisation.com
