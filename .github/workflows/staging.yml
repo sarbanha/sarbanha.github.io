@@ -15,10 +15,10 @@ jobs:
       - name: ssh and deploy app
         shell: bash
         env:
-          TEST_SECRET: "${{ secrets.TEST_SECRET }}"
+          TEST_SECRET: ${{ secrets.TEST_SECRET }}
         run: |
-          'echo ">> $TEST_SECRET"'
-          'B=$TEST_SECRET'
-          'echo $B > ~/FILE.TXT'
+          echo ">> $TEST_SECRET"
+          B=$TEST_SECRET
+          echo $B > ~/FILE.TXT
           cat ~/FILE.TXT
           
