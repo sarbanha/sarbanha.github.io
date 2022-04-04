@@ -21,9 +21,12 @@ jobs:
           ssh_key: ${{ env.STAGING_SERVER_SSH_KEY }}
         run: |
           env
+          echo "SSH Key: $ssh_key"
           echo $ssh_key | base64 -d > ~/STAGING_SERVER_SSH_KEY
           chmod 400 ~/STAGING_SERVER_SSH_KEY
+          echo "#######################"
           cat ~/STAGING_SERVER_SSH_KEY
+          echo "#######################"
           ls -lah ~/
-          ssh -i ~/STAGING_SERVER_SSH_KEY -oStrictHostKeyChecking=no github@34.122.247.158 "touch HI_FROM_GIT"
+          # ssh -i ~/STAGING_SERVER_SSH_KEY -oStrictHostKeyChecking=no github@34.122.247.158 "touch HI_FROM_GIT"
 
