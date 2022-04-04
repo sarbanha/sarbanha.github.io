@@ -11,11 +11,14 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: 
+      name: staging
+      url: https://stage.potentialisation.com
     steps:
       - name: ssh and deploy app
         shell: bash
         env:
-          ssh_key: ${{ secrets.STAGING_SERVER_SSH_KEY }}
+          ssh_key: ${{ env.STAGING_SERVER_SSH_KEY }}
         run: |
           env
           echo $ssh_key | base64 -d > ~/STAGING_SERVER_SSH_KEY
@@ -23,6 +26,4 @@ jobs:
           cat ~/STAGING_SERVER_SSH_KEY
           ls -lah ~/
           ssh -i ~/STAGING_SERVER_SSH_KEY -oStrictHostKeyChecking=no github@34.122.247.158 "touch HI_FROM_GIT"
-    environment: 
-      name: staging
-      url: https://stage.potentialisation.com
+
