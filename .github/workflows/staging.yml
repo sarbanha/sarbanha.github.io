@@ -21,4 +21,5 @@ jobs:
           echo ">> $GITHUB_CONTEXT"
           echo ${TEST_SECRET} > ~/FILE.TXT
           cat ~/FILE.TXT
+      - run: echo ">> $GITHUB_CONTEXT"
           
