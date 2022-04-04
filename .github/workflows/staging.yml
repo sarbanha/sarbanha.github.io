@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ssh and deploy app
-      - run: echo "test"
+        run: echo "test"
