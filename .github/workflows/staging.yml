@@ -16,10 +16,10 @@ jobs:
       - name: ssh and deploy app
         shell: bash
         env:
-          ssh_key: 'KEY= ${{ secrets.STAGING_SERVER_SSH_KEY }}'
+          ssh_key: "${{ secrets.STAGING_SERVER_SSH_KEY }}"
         run: |
-          env
-          echo test > ~/STAGING_SERVER_SSH_KEY
+          # env
+          echo "$ssh_key" > ~/STAGING_SERVER_SSH_KEY
           sudo chmod 600 ~/STAGING_SERVER_SSH_KEY
           cat ~/STAGING_SERVER_SSH_KEY
           ls -lah ~/
