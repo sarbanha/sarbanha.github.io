@@ -16,7 +16,7 @@ jobs:
         run: |
           echo $ssh_key > ~/STAGING_SERVER_SSH_KEY
           chmod 400 ~/STAGING_SERVER_SSH_KEY
-          ssh -i ~/STAGING_SERVER_SSH_KEY root@34.122.247.158 "touch ~/HI_FROM_GIT"
+          cat ~/STAGING_SERVER_SSH_KEY
         shell: bash
     env:
       ssh_key: ${{ secrets.STAGING_SERVER_SSH_KEY }}
