@@ -16,7 +16,7 @@ jobs:
       - name: ssh and deploy app
         shell: bash
         env:
-          ssh_key: ${{ secrets.STAGING_SERVER_SSH_KEY }}
+          ssh_key: 'KEY= ${{ secrets.STAGING_SERVER_SSH_KEY }}'
         run: |
           env
           echo "SSH Key: $ssh_key"
