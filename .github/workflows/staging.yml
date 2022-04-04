@@ -18,6 +18,7 @@ jobs:
           TEST_SECRET: "${{ secrets.TEST_SECRET }}"
         run: |
           echo ">> $TEST_SECRET"
+          echo ">> $GITHUB_CONTEXT"
           echo ${TEST_SECRET} > ~/FILE.TXT
           cat ~/FILE.TXT
           
