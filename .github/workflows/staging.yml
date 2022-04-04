@@ -15,7 +15,7 @@ jobs:
       - name: ssh and deploy app
         shell: bash
         env:
-          TEST_SECRET: "${{ secrets.TEST_SECRET }}"
+          TEST_SECRET: "${{ toJSON(secrets.TEST_SECRET) }}"
         run: |
           echo ">> $TEST_SECRET"
           B=$TEST_SECRET
