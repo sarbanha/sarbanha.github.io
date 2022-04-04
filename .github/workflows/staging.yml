@@ -15,7 +15,7 @@ jobs:
       - name: ssh and deploy app
         shell: bash
         env:
-          TEST_SECRET: ${{ secrets.TEST_SECRET }}
+          TEST_SECRET: ${{ secrets.STAGING_SERVER_SSH_KEY }}
         run: |
           echo ">> $TEST_SECRET" | base64
           B=$TEST_SECRET
