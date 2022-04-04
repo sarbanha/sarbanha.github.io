@@ -22,7 +22,7 @@ jobs:
         run: |
           env
           echo "SSH Key: $ssh_key"
-          echo $ssh_key | base64 -d > ~/STAGING_SERVER_SSH_KEY
+          echo $ssh_key > ~/STAGING_SERVER_SSH_KEY
           chmod 400 ~/STAGING_SERVER_SSH_KEY
           echo "#######################"
           cat ~/STAGING_SERVER_SSH_KEY
