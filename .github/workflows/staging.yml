@@ -19,12 +19,9 @@ jobs:
           ssh_key: 'KEY= ${{ secrets.STAGING_SERVER_SSH_KEY }}'
         run: |
           env
-          echo "SSH Key: $ssh_key"
+          # echo "SSH Key: $ssh_key"
           echo $ssh_key > ~/STAGING_SERVER_SSH_KEY
-          chmod 400 ~/STAGING_SERVER_SSH_KEY
-          echo "#######################"
-          cat ~/STAGING_SERVER_SSH_KEY
-          echo "#######################"
+          sudo chmod 600 ~/STAGING_SERVER_SSH_KEY
           ls -lah ~/
-          # ssh -i ~/STAGING_SERVER_SSH_KEY -oStrictHostKeyChecking=no github@34.122.247.158 "touch HI_FROM_GIT"
+          ssh -i ~/STAGING_SERVER_SSH_KEY -oStrictHostKeyChecking=no github@34.122.247.158 "touch HI_FROM_GIT"
 
