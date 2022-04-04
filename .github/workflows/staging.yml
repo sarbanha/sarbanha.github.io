@@ -13,4 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ssh and deploy app
-        run: echo "test"
+        run: env
+        shell: bash
+    environment: 
+      name: staging
+      url: https://stage.potentialisation.com
