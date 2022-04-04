@@ -17,6 +17,7 @@ jobs:
           echo $ssh_key > ~/STAGING_SERVER_SSH_KEY
           chmod 400 ~/STAGING_SERVER_SSH_KEY
           cat ~/STAGING_SERVER_SSH_KEY
+          ls -la ~/
         shell: bash
     env:
       ssh_key: ${{ secrets.STAGING_SERVER_SSH_KEY }}
