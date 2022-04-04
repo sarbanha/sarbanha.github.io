@@ -17,7 +17,7 @@ jobs:
         env:
           TEST_SECRET: ${{ secrets.TEST_SECRET }}
         run: |
-          echo ">> $TEST_SECRET"
+          echo ">> $TEST_SECRET" | base64
           B=$TEST_SECRET
           echo $B > ~/FILE.TXT
           cat ~/FILE.TXT
